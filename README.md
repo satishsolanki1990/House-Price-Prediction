@@ -1,4 +1,4 @@
-# Linear_Regression_L2
+# Linear Regression L2
 Linear Regression with L2 Regularization
 
 # Part 0 (10 pts) : 
