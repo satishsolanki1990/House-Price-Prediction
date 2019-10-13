@@ -52,7 +52,7 @@ cat = ['waterfront','condition','grade']
 df_num=pd.DataFrame({'Feature':num,'Mean':train[num].mean(), 'Standard deviation':train[num].std(),'Range':train[num].max()-train[num].min()})
 print(df_num)
 
-# Statistics for Catagorical features
+# Statistics for Categorical features
 d = {}
 for i in cat:
     n = train[cat].nunique().max()-train[cat].nunique()[i]
@@ -65,8 +65,10 @@ print(df_cat)
 """
 (d) Based on the meaning of the features as well as the statistics, which set of 
     features do you expect to be useful for this task? Why?
-Answer: Some of them ...
+"""
+# Answer: 
 
+"""
 (e) Normalize all features to the range between 0 and 1 using the training data. 
     Note that when you apply the learned model from the normalized data to test data,
     you should make sure that you are using the same normalizing procedure as used in training.
@@ -78,4 +80,33 @@ for i in train.drop(['dummy','date'],axis=1).columns: #not possible to normalize
     M = train[i].max()
     m = train[i].min()
     train[i] = train[i].map(lambda x : (x-m)/(M-m))
+
+
+# part 1 
+
+"""
+Explore different learning rate for batch gradient descent. For this part, you
+will work with the preprocessed and normalized data and fix lambda to 0 and consider at least the following values
+for the learning rate: 10^-0; 10^-1; 10^-2; 10^-3; 10^-4; 10^-5; 10^-6; 10^-7.
+"""
+
+"""
+(a) Which learning rate or learning rates did you observe to be good for this particular dataset? What
+learning rates make the gradient decent explode? Report your observations together with some 
+example curves showing the training SSE as a function of training iterations and its convergence or
+non-convergence behaviors.
+"""
+
+
+"""
+(b) For each learning rate worked for you, Report the SSE on the training data and the validation data
+respectively and the number of iterations needed to achieve the convergence condition for training.
+What do you observe?
+"""
+
+"""
+(c) Use the validation data to pick the best converged solution, and report the learned weights for each
+feature. Which feature are the most important in deciding the house prices according to the learned
+weights? Compare them to your pre-analysis results (Part 0 (d)).
+"""
 
