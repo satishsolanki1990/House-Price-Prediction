@@ -178,7 +178,6 @@ while (True):
     
     if np.linalg.norm(s)<eps:
         break
-
 # 
    
 """
@@ -187,9 +186,38 @@ respectively and the number of iterations needed to achieve the convergence cond
 What do you observe?
 """
 
+
 """
 (c) Use the validation data to pick the best converged solution, and report the learned weights for each
 feature. Which feature are the most important in deciding the house prices according to the learned
 weights? Compare them to your pre-analysis results (Part 0 (d)).
+"""
+
+
+"""
+Part2 (30 pts). Experiments with di
+erent lambda values. For this part, you will test the effect of the
+regularization parameter on your linear regressor. Please exclude the bias term from regularization. It is
+often the case that we don't really what the right  value should be and we will need to consider a range of
+di
+erent  values. For this project, consider at least the following values for lambda: 0; 10^-3; 10^-2; 10^-1; 1; 10; 100.
+Feel free to explore other choices of  using a broader or 
+finer search grid. Report the SSE on the training data
+and the validation data respectively for each value of lambda. Report the weights you learned for di
+erent values
+of lambda. What do you observe? Your discussion of the results should clearly answer the following questions:
+(a) What trend do you observe from the training SSE as we change  value?
+(b) What tread do you observe from the validation SSE?
+(c) Provide an explanation for the observed behaviors.
+(d) What features get turned off
+ forlambda = 10, 10^-2 and 0 ?
+
+Part 3 (10 pts). Training with non-normalized data Use the preprocessed data but skip the nor-
+malization. Consider at least the following values for learning rate: 1, 0; 10^-3; 10^-6; 10^-9; 10^-15. For each
+value , train up to 10000 iterations ( Fix the number of iterations for this part). If training is clearly di-
+verging, you can terminate early. Plot the training SSE and validation SSE respectively as a function of
+the number of iterations. What do you observe? Specify the learning rate value (if any) that prevents the
+gradient descent from exploding? Compare between using the normalized and the non-normalized versions
+of the data. Which one is easier to train and why?
 """
 
