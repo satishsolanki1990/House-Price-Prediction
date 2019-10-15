@@ -31,10 +31,13 @@ Suggestion of ways to use this date feature :
  - We could create a new feature : the number of years between the building year and the year it was sold.
 """
 #We could create a new feature : the number of years between the building year and the year it was sold.
+# added a new feature yrs=(sold year - built year)
+#train['yrs']=[int(i)-int(j) for i,j in zip(train['year'],train['yr_built'])
+
 
 
 # 0.(c) Build a table that reports the statistics for each feature. For numerical features, 
-num = ['bedrooms','bathrooms','sqft_living','sqft_lot','floors','view','sqft_above','sqft_basement','yr_built','yr_renovated'       ,'lat','long','sqft_living15','sqft_lot15']
+num = ['bedrooms','bathrooms','sqft_living','sqft_lot','floors','view','sqft_above','sqft_basement','yr_built','yr_renovated','lat','long','sqft_living15','sqft_lot15']
 cat = ['waterfront','condition','grade']
 
 # Statistics for continuous features
@@ -55,7 +58,7 @@ df_cat=pd.DataFrame.from_dict(d)
 # Answer: 
 # generate heat map of Correlation values between features
 plt.figure(figsize=(20,20))
-drop_set =['floors','lat','sqft_basement','waterfront','view','date','dummy','sqft_lot','condition','yr_built','yr_renovated','zipcode','long','sqft_lot15','month','day','year']
+drop_set =['sqft_living15','bathrooms','bedrooms','floors','lat','sqft_basement','waterfront','view','date','dummy','sqft_lot','condition','yr_built','yr_renovated','zipcode','long','sqft_lot15','month','day','year']
 foo = sns.heatmap(train.drop(drop_set,axis=1).corr(), vmax=0.6, square=True, annot=True)
 
 
@@ -81,7 +84,7 @@ learning rate: 10^-0; 10^-1; 10^-2; 10^-3; 10^-4; 10^-5; 10^-6; 10^-7.
 
 X = train.drop(drop_set,axis=1)
 X = np.mat(X)
-gamma=10**(-7) # learning Rate
+gamma=10**(-4) # learning Rate
 eps=0.5 # convergence criteria
 N = X.shape[0] # number of rows, 10000
 np.random.seed(2) # random seed generation
@@ -102,7 +105,8 @@ while (True):
     y_hat=np.matmul(X,np.transpose(w0))
     SSE.append(np.linalg.norm(y_hat-y)**2)
     counter=counter+1
-    if counter>20000:
+    print(np.linalg.norm(s))
+    if counter>5000:
         print("counter error")
         break
     if np.linalg.norm(s)<eps:
