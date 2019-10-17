@@ -22,7 +22,7 @@ for i in train.drop(['dummy','date'],axis=1).columns:
 eps = 0.5
 np.random.seed(2)
 
-def grad(w,X,y,d):
+def grad(w,X,y,d,N):
     s = np.zeros(d)
     for i in range(N):
         s += (np.transpose(w).dot(X[i])-y[i])*X[i]
@@ -39,7 +39,7 @@ def learn(drop_set,gamma,max_it):
     SSE = [100]
     c = 0
     while (SSE[c] > eps) & (c < max_it):
-        gr = grad(w,X,y,d)
+        gr = grad(w,X,y,d,N)
         w -= gamma*gr
         SSE.append(np.linalg.norm(gr)**2)
         c += 1
@@ -51,19 +51,19 @@ def learn(drop_set,gamma,max_it):
 
 
 # Arguments from Satish latest script (see time result after execution)
+'''
 print("Runtime using Arguments from Satish latest script : ")
-drop_set = ['sqft_living15','bathrooms','bedrooms','floors','lat','sqft_basement','waterfront','view','date','dummy',            'sqft_lot','condition','yr_built','yr_renovated','zipcode','long','sqft_lot15','month','day','year']
+drop_set = ['price','sqft_living15','bathrooms','bedrooms','floors','lat','sqft_basement','waterfront','view','date','dummy',            'sqft_lot','condition','yr_built','yr_renovated','zipcode','long','sqft_lot15','month','day','year']
 gamma = 10**(-4)
 max_it = 5000
 temp = learn(drop_set,gamma,max_it)
 print("Learning took :\n"+str(temp[2])+" iterations\n"+      str(np.round(temp[3]))+" sec"+" ("+str(np.round(temp[3]/60,1))+" min)"     +"\nFinal SSE = "+str(temp[1][-1])+"\n")
-
+'''
 
 print("Let's take a bigger max_it and that's basically question (a) : ")
 drop_set = ['date','price','waterfront','sqft_lot15','month','day']
-max_it = 1000
+max_it = 10000
 for gamma in [10**(0),10**(-1),10**(-2),10**(-3),10**(-4),10**(-5),10**(-6),10**(-7)]:
     temp = learn(drop_set,gamma,max_it)
     print("gamma = "+str(gamma))
     print("Learning took :\n"+str(temp[2])+" iterations\n"+      str(np.round(temp[3]))+" sec"+" ("+str(np.round(temp[3]/60,1))+" min)"     +"\nFinal SSE = "+str(temp[1][-1])+"\n")
-
