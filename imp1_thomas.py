@@ -62,7 +62,7 @@ print("Learning took :\n"+str(temp[2])+" iterations\n"+      str(np.round(temp[3
 
 print("Let's take a bigger max_it and that's basically question (a) : ")
 drop_set = ['date','price','waterfront','sqft_lot15','month','day']
-max_it = 10000
+max_it = 10
 for gamma in [10**(0),10**(-1),10**(-2),10**(-3),10**(-4),10**(-5),10**(-6),10**(-7)]:
     temp = learn(drop_set,gamma,max_it)
     print("gamma = "+str(gamma))
