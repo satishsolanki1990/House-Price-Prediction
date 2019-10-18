@@ -65,9 +65,10 @@ def dnorm(Nprice,m,M):
 def validation(w,dropset):
     X = np.array(dev.drop(drop_set,axis=1))
     # compute the new price
+    y_actual= np.transpose(np.array(train.price,ndmin=2))
     y_new=np.matmul(X,w)
     y_newDN=dnorm(y_new,vminP,vMaxP)
-    RSSE=np.linalg.norm(y_newDN-dev['price'])
+    RSSE=np.linalg.norm(y_newDN-y_actual)
     return RSSE
 
 def grad(w,X,y,d,N):
