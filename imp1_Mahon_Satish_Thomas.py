@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[287]:
-
-
 # Import libraries
 import pandas as pd
 import numpy as np
@@ -13,26 +7,14 @@ import seaborn as sns
 import xlrd
 pd.set_option('display.max_columns',30)
 
-
-# In[288]:
-
-
 # Load datasets
 train = pd.read_csv("PA1_train.csv")
 dev = pd.read_csv("PA1_dev.csv")
 test = pd.read_csv("PA1_test.csv")
 
-
-# In[289]:
-
-
 # Global parameters
 eps = 0.5
 np.random.seed(2)
-
-
-# In[290]:
-
 
 ## Preprocessing
 
@@ -57,16 +39,8 @@ table2 = pd.DataFrame(d)
 #table1.to_excel('table1.xlsx',index=False)# in report
 #table2.to_excel('table2.xlsx',index=False)# in report
 
-
-# In[291]:
-
-
 for df in [train,dev,test]:
     df.drop('date',axis=1,inplace=True)
-
-
-# In[292]:
-
 
 ## Normalization
 # We save copies of the non normalized datasets for part 3
@@ -74,18 +48,10 @@ train_raw = train.copy()
 dev_raw = dev.copy()
 test_raw = test.copy()
 
-
-# In[338]:
-
-
 # making sure we have numerical features for part 3 :
 for df in [train_raw,dev_raw]:
     for col in df.columns:
         df[col] = df[col].map(float)
-
-
-# In[293]:
-
 
 cols = list(train.columns)
 cols.remove('price')
@@ -103,10 +69,6 @@ train.price = train.price.map(float)
 M = train.price.max()
 m = train.price.min()
 train['normalized_price'] = train.price.map(lambda x : (x-m)/(M-m))
-
-
-# In[294]:
-
 
 def learn(train,dev,gamma,max_it,lambdA):
     t = time.time()
@@ -140,10 +102,6 @@ def learn(train,dev,gamma,max_it,lambdA):
     elapsed = time.time() - t
     return (w,SSE,c,elapsed,SSE_dev,MRAE,features)
 
-
-# In[295]:
-
-
 ## Part 1 :
 lambdA = 0
 max_it = 500000 # we tried with 1M5 for 1e-7 but norm_grad won't get lower
@@ -164,16 +122,8 @@ for gamma in gammas:
     all_w.append(temp[0])
     features = temp[-1]
 
-
-# In[297]:
-
-
 results_part1 = pd.DataFrame({'Gamma':gammas,'iterations':all_c,'SSE training':final_SSEs_train,             'SSE validation':SSEs_validation,'MRAE':all_MRAE})
 #results_part1.to_excel('results_part1.xlsx',index=False)# in report
-
-
-# In[298]:
-
 
 # Saving curves in .csv files to plot them later
 #temp = 'part1_gamma_1e-'
@@ -183,33 +133,16 @@ results_part1 = pd.DataFrame({'Gamma':gammas,'iterations':all_c,'SSE training':f
 #    pd.DataFrame({name:i}).to_csv(name+'.csv',index=False)
 #    c += 1
 
-
-# In[299]:
-
-
 # Learning weights from the best solution :
 # the one from gamma = 1e-5
 weights = pd.DataFrame({'Features':features,'Weights':list(all_w[5][:,0])})
 weights = weights.sort_values(by='Weights',ascending=False)
-
-
-# In[300]:
-
-
 #weights.to_excel('part1_best_w.xlsx',index=False)# in report
-
-
-# In[301]:
-
 
 # figure in report :
 #fig = weights.plot(x='Features',y='Weights',kind='bar',rot=80).get_figure()
 #fig.set_size_inches(16,9)
 #fig.savefig('part1_best_w.png', dpi=1000)
-
-
-# In[311]:
-
 
 ## Part 2 :
 max_it = 300000
@@ -224,16 +157,8 @@ for lambdA in lambdas:
     SSE_validation.append(temp[4])
     ws.append(temp[0])
 
-
-# In[329]:
-
-
 results_part2 = pd.DataFrame({'Lambda':lambdas,'SSE training':SSE_train,             'SSE validation':SSE_validation})
 #results_part2.to_excel('results_part2.xlsx',index=False)# in report
-
-
-# In[321]:
-
 
 li = list(pd.Series(lambdas).map(lambda x : "lambda = "+str(x)))
 d = {'Features':temp[-1]}
@@ -242,40 +167,15 @@ for i in li:
     d[i] = list(ws[c][:,0])
     c += 1
 part2_w_table = pd.DataFrame(d)
-
-
-# In[330]:
-
-
 #part2_w_table.to_excel('part2_w_table.xlsx',index=False)# in report
 
-
-# ___
-
-# ##### Hum...
-
-# In[322]:
-
-
-part2_w_table
-
-
-# In[327]:
-
-
-part2_w_table.iloc[:,1:].plot()
-
-
-# ___
-
-# In[ ]:
+# The following table is a complementary answer to part2 question (d)
+# it shows how lambda tend to squeeze the weights close to zero
+part2_d = pd.DataFrame(abs(part2_w_table.iloc[:,1:]).sum())
+#part2_d.to_excel('part2_d.xlsx')# in report
 
 
 ## Part 3 :
-
-
-# In[341]:
-
 
 def learn_part_3(train,dev,gamma,max_it):
     y = np.transpose(np.array(train.price,ndmin=2))
@@ -302,10 +202,6 @@ def learn_part_3(train,dev,gamma,max_it):
         
     return (w,SSE,c,SSE_dev)
 
-
-# In[358]:
-
-
 max_it = 10000
 gammas = [1,0,1e-3,1e-6,1e-9,1e-15]
 SSEt = []
@@ -315,10 +211,7 @@ for gamma in gammas:
     SSEt.append(temp[1])
     SSEv.append(temp[3])
 
-
-# In[368]:
-
-
+    
 li = list(pd.Series(gammas).map(lambda x : 'part3_gamma_'+str(x)))
 c = 0
 for i in li:
@@ -326,9 +219,22 @@ for i in li:
     c += 1
     #table.to_csv(i,index=False)# curves in the report
 
+## Prediction on test dataset
 
-# In[367]:
+# Best w from our experiment :
+# the one with gamma = 1e-5 and lambda = 1e-3
+# SSE on validation was 21316.6 for these parameters
 
+w = ws[1]
+X = np.array(test.drop('id',axis=1))
+y_pred = (X.dot(w))*(M-m)+m
+test['predicted_price'] = y_pred
 
-plt.plot(np.log10(table.iloc[:,0]))
-
+# Here we decide to apply a little correction for the predicted price :
+# a few houses were priced by our model at a negative price,
+# which does not make sense.
+# In order to have a good score on the test set the idea was to bypass
+# the model for these "obvious" mistakes.
+# We went up to 50k house (arbitrary decision), so that it makes sense.
+test.predicted_price = np.where(test.predicted_price < 0.5,0.5,test.predicted_price)
+#test[['id','predicted_price']].to_csv('prediction.csv',index=False)# .csv file sent
