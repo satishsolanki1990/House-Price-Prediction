@@ -4,27 +4,44 @@
 
  - [Objective](#obj)
  - [Data](#data)
- - [Part 0 : Exploratory Data Analysis](#Part-0)
- - [Part 1 : Impact of different Learning Rate](#Part-1)
- - [Part 2 : Impact of Regularization hyperparameter](#Part-2)
- - [Part 3 : Impact of Normalization](#Part-3)
+ - [1: Exploratory Data Analysis](#Part-0)
+ - [2: Impact of different Learning Rate](#Part-1)
+ - [3: Impact of Regularization hyperparameter](#Part-2)
+ - [4: Impact of Normalization](#Part-3)
  - [Results](#Results)
  - [Conclusion](#Conclusion)
 ---
 
-<details>
+<details open>
 <summary> <a name="obj"><b style="font-size:20px"> 
 Objective</b> </a> </summary>
 
 - To build a linear regression with L2 regularization that can be used to predict 
 the house’s price based on a set of features.
-- Develope insight on impact of Learning Rate and Regularization hyper-parameter 
-  on model performance.
-  
+- Develope insight on impact of Learning Rate, Regularization hyper-parameter 
+  and normalization on model performance.
 </details>
 
+<details>
+<summary> <a name="reggression"><b style="font-size:20px"> 
+Linear Regression with L2 Regularization</b> </a> </summary>
+
+__Linear Regression:__ It is fitting of a straight line to data i.e. 
+linear mapping of input features to output values.
+
+__L2 Regularization:__ It is also known as Ridge regression. It adds 
+"sum of square of all weights" to cost function as a penalty term.
+The L2 penalty is tunned by a hyperparameter \lambda . 
+
+The loss function of linear regression with L2-regularization is given below:
 
 
+![](images/Loss_function.png)
+
+Here __w__ are weights of features and \lambda is regularization parameter
+to penalty term.
+
+</details>
 
 <details>
 <summary> <a name="data"><b style="font-size:20px"> Data</b> </a> </summary>
