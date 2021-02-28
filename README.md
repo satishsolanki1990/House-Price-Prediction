@@ -19,8 +19,7 @@ the house’s price based on a set of features.
 - Develope insight on impact of Learning Rate and Regularization hyper-parameter 
   on model performance.
 
-<details>
-<summary> <h2>Data: </h2> </summary>
+<details><summary><h2>Data:</h2></summary>
 
 The dataset consisted of historic data on houses sold between May 2014 to 
 May 2015.There are two data files:  __training (10000 examples) and devlopment (5597 examples)__ 
