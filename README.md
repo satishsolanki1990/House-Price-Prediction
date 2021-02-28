@@ -31,7 +31,7 @@ linear mapping of input features to output values.
 
 __L2 Regularization:__ It is also known as Ridge regression. It adds 
 "sum of square of all weights" to cost function as a penalty term.
-The L2 penalty is tunned by a hyperparameter \lambda . 
+The L2 penalty is tunned by a hyperparameter $\lambda$ . 
 
 The loss function of linear regression with L2-regularization is given below:
 
