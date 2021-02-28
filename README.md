@@ -84,7 +84,7 @@ Preprocessing and simple analysis. Perform the following preprocessing of the yo
 
 <details>
 <summary> <a name="part-1"><b style="font-size:20px"> 
-Part 1 : Impact of different Learning Rate</b> </a> </summary>
+2 : Impact of different Learning Rate</b> </a> </summary>
 
 Explore different learning rate for batch gradient descent. 
 </details>
@@ -92,7 +92,7 @@ Explore different learning rate for batch gradient descent.
 
 <details>
 <summary> <a name="part-2"><b style="font-size:20px"> 
-Part 2 : Impact of Regularization hyper-parameter</b> </a> </summary>
+3 : Impact of Regularization hyper-parameter</b> </a> </summary>
 
 Experiments with dierent /lmbda values.
 </details>
@@ -100,7 +100,7 @@ Experiments with dierent /lmbda values.
 
 <details>
 <summary> <a name="part-3"><b style="font-size:20px"> 
-Part 3 : Impact of Normalization</b> </a> </summary>
+4 : Impact of Normalization</b> </a> </summary>
 
  Training with non-normalized data Use the preprocessed data but skip the nor- malization.
 </details>
