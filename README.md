@@ -4,7 +4,7 @@
 
  - [Objective](#obj)
  - [Data](#data)
- - [1: Exploratory Data Analysis](#Part-0)
+ - [1: Data Preprocessing](#Part-0)
  - [2: Impact of different Learning Rate](#Part-1)
  - [3: Impact of Regularization hyperparameter](#Part-2)
  - [4: Impact of Normalization](#Part-3)
@@ -76,7 +76,7 @@ The last one is the target for prediction. Variables Description Data Type
 
 <details>
 <summary> <a name="part-0"><b style="font-size:20px">
-Part 0 : Exploratory Data Analysis</b> </a> </summary>
+1: Data Preprocessing</b> </a> </summary>
 
 Preprocessing and simple analysis. Perform the following preprocessing of the your data.
 </details>
