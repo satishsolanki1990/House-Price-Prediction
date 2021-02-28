@@ -19,7 +19,9 @@ the house’s price based on a set of features.
 - Develope insight on impact of Learning Rate and Regularization hyper-parameter 
   on model performance.
 
-## Data:
+<details>
+<summary> <h2>Data: </h2> </summary>
+
 The dataset consisted of historic data on houses sold between May 2014 to 
 May 2015.There are two data files:  __training (10000 examples) and devlopment (5597 examples)__ 
 
@@ -47,7 +49,7 @@ The last one is the target for prediction. Variables Description Data Type
 20. sqft_living15 [numeric]: Living room area in 2015 
 21. sqft_lot15 [numeric]: lotSize area in 2015
 22. price [numeric, continuous] : Price/100k, which is the __prediction target__
-
+</details>
 
 ## Part 0 : Exploratory Data Analysis
 
