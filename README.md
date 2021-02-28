@@ -4,12 +4,12 @@ Content
 =
  - [Objective](#objective)
  - [Data](#data)
- - [Part 0 : Exploratory Data Analysis](#Part-0-Exploratory-Data-Analysis)
- - [Part 1 : Impact of different Learning Rate]()
- - [Part 2 : Impact of Regularization hyper-parameter]()
- - [Part 3 : Impact of Normalization]()
- - [Results]()
- - [Conclusion]()
+ - [Part 0: Exploratory Data Analysis](#Part-0-Exploratory-Data-Analysis)
+ - [Part 1: Impact of different Learning Rate](#Part-1-Impact-of-different-Learning-Rate)
+ - [Part 2: Impact of Regularization hyperparameter](#Part-2-Impact-of-Regularization-hyperparameter)
+ - [Part 3: Impact of Normalization](#Part-3-Impact-of-Normalization)
+ - [Results](#Results)
+ - [Conclusion](#Conclusion)
 ---
 
 ## Objective:
