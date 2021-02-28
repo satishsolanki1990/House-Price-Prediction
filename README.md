@@ -21,9 +21,9 @@ the house’s price based on a set of features.
 
 
 <details>
-<summary> <b style="font-size:20px"> Data</b> </summary>
+<summary> <a name="data"><b style="font-size:20px"> Data</b> </a> </summary>
 The dataset consisted of historic data on houses sold between May 2014 to 
-May 2015.There are two data files:  __training (10000 examples) and devlopment (5597 examples)__ 
+May 2015.There are two data files:  <b>training (10000 examples) and devlopment (5597 examples)</b> 
 
 The dataset consisted of 23 features (including the dummy). 
 The last one is the target for prediction. Variables Description Data Type
