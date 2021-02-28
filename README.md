@@ -1,23 +1,29 @@
 # House-Price-Prediction
 
-Content
-=
- - [Objective](#objective)
+## Content
+
+ - [Objective](#obj)
  - [Data](#data)
- - [Part 0 : Exploratory Data Analysis](#Part-0--Exploratory-Data-Analysis)
- - [Part 1 : Impact of different Learning Rate](#Part-1--Impact-of-different-Learning-Rate)
- - [Part 2 : Impact of Regularization hyperparameter](#Part-2--Impact-of-Regularization-hyperparameter)
- - [Part 3 : Impact of Normalization](#Part-3--Impact-of-Normalization)
+ - [Part 0 : Exploratory Data Analysis](#Part-0)
+ - [Part 1 : Impact of different Learning Rate](#Part-1)
+ - [Part 2 : Impact of Regularization hyperparameter](#Part-2)
+ - [Part 3 : Impact of Normalization](#Part-3)
  - [Results](#Results)
  - [Conclusion](#Conclusion)
 ---
 
-## Objective:
+<details>
+<summary> <a name="obj"><b style="font-size:20px"> 
+Objective</b> </a> </summary>
 
 - To build a linear regression with L2 regularization that can be used to predict 
 the house’s price based on a set of features.
 - Develope insight on impact of Learning Rate and Regularization hyper-parameter 
   on model performance.
+  
+</details>
+
+
 
 
 <details>
@@ -51,26 +57,49 @@ The last one is the target for prediction. Variables Description Data Type
 22. price [numeric, continuous] : Price/100k, which is the __prediction target__
 </details>
 
-## Part 0 : Exploratory Data Analysis
+<details>
+<summary> <a name="part-0"><b style="font-size:20px">
+Part 0 : Exploratory Data Analysis</b> </a> </summary>
 
 Preprocessing and simple analysis. Perform the following preprocessing of the your data.
+</details>
 
-## Part 1 : Impact of different Learning Rate
 
-   Explore different learning rate for batch gradient descent. 
+<details>
+<summary> <a name="part-1"><b style="font-size:20px"> 
+Part 1 : Impact of different Learning Rate</b> </a> </summary>
 
-## Part 2 : Impact of Regularization hyper-parameter
+Explore different learning rate for batch gradient descent. 
+</details>
 
-   Experiments with dierent /lmbda values.
- 
-## Part 3 : Impact of Normalization
+
+<details>
+<summary> <a name="part-2"><b style="font-size:20px"> 
+Part 2 : Impact of Regularization hyper-parameter</b> </a> </summary>
+
+Experiments with dierent /lmbda values.
+</details>
+
+
+<details>
+<summary> <a name="part-3"><b style="font-size:20px"> 
+Part 3 : Impact of Normalization</b> </a> </summary>
 
  Training with non-normalized data Use the preprocessed data but skip the nor- malization.
-
-## Results:
-
+</details>
 
 
-## Conclusion:
+<details>
+<summary> <a name="results"><b style="font-size:20px"> 
+Results</b> </a> </summary>
+
+ ...
+</details>
+
+<details>
+<summary> <a name="conclusion"><b style="font-size:20px"> 
+Conclusion</b> </a> </summary>
+ ...
+</details>
 
 
