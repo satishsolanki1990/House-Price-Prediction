@@ -1,11 +1,10 @@
 # House-Price-Prediction
 
----
 Content
 =
- - [Objective]()
- - [Data]()
- - [Part 0 : Exploratory Data Analysis]()
+ - [Objective](#objective)
+ - [Data](#data)
+ - [Part 0 : Exploratory Data Analysis](#Part-0-Exploratory-Data-Analysis)
  - [Part 1 : Impact of different Learning Rate]()
  - [Part 2 : Impact of Regularization hyper-parameter]()
  - [Part 3 : Impact of Normalization]()
