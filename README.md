@@ -34,7 +34,7 @@ The L2 penalty is tunned by a hyperparameter \lambda .
 
 The loss function of linear regression with L2-regularization is given below:
 
-<img align="center" width="50" height="20" src="./images/Loss_function.png">
+<img align="center" width="200" height="100" src="./images/Loss_function.png">
 
 Here __w__ are weights of features and \lambda is regularization parameter
 to penalty term.
@@ -82,10 +82,10 @@ __1. Checked for  Missing values :__ No missing values in the data
 __2. Data Statistics :__ Features were classified in two categories: Numerical and Catergorical
 
 For Numerical Features:  
-<img align="center" width="100" height="100" src="./images/num_stat.png">
+<img align="center" width="500" height="500" src="./images/num_stat.png">
 
 For Category Features:  
-<img align="center" width="100" height="100" src="./images/cat_stat.png">
+<img align="center" width="500" height="500" src="./images/cat_stat.png">
 
 
 __3. Remove Outliers :__ For numerical features, examples below 0.01 quantile and higher 0.99 quantiles 
@@ -95,21 +95,21 @@ __4. Feature Selection :__ Features were selected based on 3 methods:
 
 __4.1__ Graphical analysis: 
 __scatter plot__(predictor versus response)
-<img align="center" width="100" height="100" src="./images/Scatter_plot.png">
+<img align="center" width="800" height="800" src="./images/Scatter_plot.png">
 
 __histogram__
-<img align="center" width="100" height="100" src="./images/histograms.png">
+<img align="center" width="800" height="800" src="./images/histograms.png">
 
 __4.2__ Abalation Analysis : Features were dropped one by one and ridge regression 
 model accuracy is measured. If drop of a feature causes significant decrease in accuracy,
 then it implies the feature has high importance.
 
-<img align="center" width="100" height="100" src="./images/abalation.png">
+<img align="center" width="400" height="600" src="./images/abalation.png">
 
 
 __4.3__ Correlation Matrix : A multicolinearity was tested using correlation matrix.
 
-<img align="center" width="100" height="100" src="./images/correlation.png">
+<img align="center" width="800" height="800" src="./images/correlation.png">
 
 Based on feature selection analysis dropped these features :  
 
@@ -127,7 +127,7 @@ Part 1: Impact of different Learning Rate</b> </a> </summary>
 Explored different learning rates for batch gradient descent. Following learning rates 
 are tested:[1e-0,1e-1,1e-2,1e-3,1e-4,1e-5,1e-6,1e-7]
 
-<img align="center" width="100" height="100" src="./images/gamma.png">
+<img align="center" width="500" height="500" src="./images/gamma.png">
 
 here gamma is learning rate. Based on results,  1e-5 is picked as optimum learning rate.
 </details>
@@ -139,7 +139,8 @@ Part 2: Impact of Regularization hyper-parameter </b> </a> </summary>
 Explored different learning rates for batch gradient descent. Following learning rates 
 are tested:[0,1e-3,1e-2,1e-1,1,10,100]
 
-<img align="center" width="100" height="100" src="./images/lambda.png">
+<img align="center" width="500" height="500" src="./images/lambda.png">
+
 here lambda is hyper-parameter to handle L2 regularization term and 1.0 is picked.
 
 </details>
@@ -151,10 +152,10 @@ Part 3: Impact of Normalization</b> </a> </summary>
 Training with non-normalized data Use the preprocessed data but skip 
 the normalization.
 
-<img align="center" width="100" height="100" src="./images/learning_curve_raw.png">
+<img align="center" width="500" height="500" src="./images/learning_curve_raw.png">
 *Without Normalization*
 
-<img align="center" width="100" height="100" src="./images/learning_curve.png">
+<img align="center" width="500" height="500" src="./images/learning_curve.png">
 *with Normalization*
 
 </details>
