@@ -109,9 +109,9 @@ __4.3__ Correlation Matrix : A multicolinearity was tested using correlation mat
 
 ![](./images/correlation.png)
 
-__Based on feature selection analysis,
+Based on feature selection analysis dropped these features :  
 
-Dropped these features :  sqft_living ,  sqft_lot15, yr_dif, year
+sqft_living , sqft_lot15, yr_dif, year
 
 and saved filtered data.
 
