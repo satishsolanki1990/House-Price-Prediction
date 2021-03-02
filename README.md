@@ -113,7 +113,7 @@ Based on feature selection analysis dropped these features :
 
 sqft_living , sqft_lot15, yr_dif, year
 
-and saved filtered data.
+and saved the filtered data.
 
 </details>
 
@@ -127,7 +127,7 @@ are tested:[1e-0,1e-1,1e-2,1e-3,1e-4,1e-5,1e-6,1e-7]
 
 ![](./images/gamma.png)
 
-here gamma is learning rate. Based on results,  1e-5 is piked as optimum learning rate.
+here gamma is learning rate. Based on results,  1e-5 is picked as optimum learning rate.
 </details>
 
 
