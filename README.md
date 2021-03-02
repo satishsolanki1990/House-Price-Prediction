@@ -34,7 +34,7 @@ The L2 penalty is tunned by a hyperparameter \lambda .
 
 The loss function of linear regression with L2-regularization is given below:
 
-<img align="center" width="300" height="50" src="./images/Loss_function.png">
+<img align="center" width="300" height="150" src="./images/Loss_function.png">
 
 Here __w__ are weights of features and \lambda is regularization parameter
 to penalty term.
@@ -95,10 +95,10 @@ __4. Feature Selection :__ Features were selected based on 3 methods:
 
 __4.1__ Graphical analysis: 
 __scatter plot__(predictor versus response)
-<img align="centre" width="1800" height="1400" src="./images/Scatter_plot.png">
+<img align="centre" width="2000" height="1000" src="./images/Scatter_plot.png">
 
 __histogram__
-<img align="centre" width="1800" height="1400" src="./images/histograms.png">
+<img align="centre" width="2000" height="1000" src="./images/histograms.png">
 
 __4.2__ Abalation Analysis : Features were dropped one by one and ridge regression 
 model accuracy is measured. If drop of a feature causes significant decrease in accuracy,
@@ -109,7 +109,7 @@ then it implies the feature has high importance.
 
 __4.3__ Correlation Matrix : A multicolinearity was tested using correlation matrix.
 
-<img align="center" width="1500" height="1000" src="./images/correlation.png">
+<img align="center" width="2000" height="1000" src="./images/correlation.png">
 
 Based on feature selection analysis dropped these features :  
 
@@ -136,8 +136,10 @@ here gamma is learning rate. Based on results,  1e-5 is picked as optimum learni
 <details>
 <summary> <a name="part-2"><b style="font-size:20px"> 
 Part 2: Impact of Regularization hyper-parameter </b> </a> </summary>
-Explored different learning rates for batch gradient descent. Following learning rates 
-are tested:[0,1e-3,1e-2,1e-1,1,10,100]
+Explored different learning rates for batch gradient descent. 
+
+Following learning rates are tested:\[0,1e-3,1e-2,1e-1,1,10,100]
+
 
 <img align="center" width="400" height="400" src="./images/lambda.png">
 
