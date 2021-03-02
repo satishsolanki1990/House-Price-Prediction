@@ -148,10 +148,10 @@ here lambda is hyper-parameter to handle L2 regularization term and 1.0 is picke
 Part 3: Impact of Normalization</b> </a> </summary>
 Training with non-normalized data Use the preprocessed data but skip 
 the normalization.
+
 ![](./images/learning_curve_raw.png)
 
 ![](./images/learning_curve.png)
-
 
 
 </details>
