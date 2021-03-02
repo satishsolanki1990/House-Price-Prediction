@@ -149,11 +149,9 @@ Part 3: Impact of Normalization</b> </a> </summary>
 Training with non-normalized data Use the preprocessed data but skip 
 the normalization.
 
-![](./images/learning_curve_raw.png)
-*Without Normalization*
+![Without Normalization](./images/learning_curve_raw.png)
 
-![](./images/learning_curve.png)
-*with Normalization*
+![with Normalization](./images/learning_curve.png)
 
 </details>
 
