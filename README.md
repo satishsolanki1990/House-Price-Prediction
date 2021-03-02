@@ -94,7 +94,7 @@ __4. Feature Selection :__ Features were selected based on 3 methods:
 
 __4.1__ Graphical analysis: 
 __scatter plot__(predictor versus response)
-![](./images/scatter_plot.png)
+![](./images/Scatter_plot.png)
 
 __histogram__
 ![](./images/histograms.png)
