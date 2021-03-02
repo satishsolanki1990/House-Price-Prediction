@@ -93,16 +93,18 @@ are dropped. Near 90 outlie examples are dropped.
 __4. Feature Selection :__ Features were selected based on 3 methods:
 
 __4.1__ Graphical analysis: 
-__scatter plot__ between predictor versus response
+__scatter plot__(predictor versus response)
+
 ![](images/scatter_plot.png)
 
-__histogram__ of features.
+__histogram__
 ![](images/histograms.png)
 
 __4.2__ Abalation Analysis : Features were dropped one by one and ridge regression 
 model accuracy is measured. If drop of a feature causes significant decrease in accuracy,
 then it implies the feature has high importance.
-![](images/onebyone feature drop accuracy.png)
+
+![](images/onebyone feature drop accuracy.png =100x30)
 
 __4.3__ Correlation Matrix : A multicolinearity was tested using correlation matrix.
 ![](images/correlation.png)
@@ -122,7 +124,9 @@ Part 1: Impact of different Learning Rate</b> </a> </summary>
 
 Explored different learning rates for batch gradient descent. Following learning rates 
 are tested:[1e-0,1e-1,1e-2,1e-3,1e-4,1e-5,1e-6,1e-7]
+
 ![](./images/gamma.png)
+
 here gamma is learning rate. Based on results,  1e-5 is piked as optimum learning rate.
 </details>
 
