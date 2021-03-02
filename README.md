@@ -82,10 +82,10 @@ __1. Checked for  Missing values :__ No missing values in the data
 __2. Data Statistics :__ Features were classified in two categories: Numerical and Catergorical
 
 For Numerical Features:  
-<img align="center" width="500" height="500" src="./images/num_stat.png">
+<img align="centre" width="500" height="800" src="./images/num_stat.png">
 
 For Category Features:  
-<img align="center" width="500" height="500" src="./images/cat_stat.png">
+<img align="centre" width="500" height="1000" src="./images/cat_stat.png">
 
 
 __3. Remove Outliers :__ For numerical features, examples below 0.01 quantile and higher 0.99 quantiles 
@@ -95,21 +95,21 @@ __4. Feature Selection :__ Features were selected based on 3 methods:
 
 __4.1__ Graphical analysis: 
 __scatter plot__(predictor versus response)
-<img align="center" width="800" height="800" src="./images/Scatter_plot.png">
+<img align="centre" width="1000" height="1000" src="./images/Scatter_plot.png">
 
 __histogram__
-<img align="center" width="800" height="800" src="./images/histograms.png">
+<img align="centre" width="1000" height="1000" src="./images/histograms.png">
 
 __4.2__ Abalation Analysis : Features were dropped one by one and ridge regression 
 model accuracy is measured. If drop of a feature causes significant decrease in accuracy,
 then it implies the feature has high importance.
 
-<img align="center" width="400" height="600" src="./images/abalation.png">
+<img align="centre" width="400" height="600" src="./images/abalation.png">
 
 
 __4.3__ Correlation Matrix : A multicolinearity was tested using correlation matrix.
 
-<img align="center" width="800" height="800" src="./images/correlation.png">
+<img align="center" width="1000" height="1000" src="./images/correlation.png">
 
 Based on feature selection analysis dropped these features :  
 
@@ -152,10 +152,10 @@ Part 3: Impact of Normalization</b> </a> </summary>
 Training with non-normalized data Use the preprocessed data but skip 
 the normalization.
 
-<img align="center" width="500" height="500" src="./images/learning_curve_raw.png">
+<img align="center" width="600" height="600" src="./images/learning_curve_raw.png">
 *Without Normalization*
 
-<img align="center" width="500" height="500" src="./images/learning_curve.png">
+<img align="center" width="600" height="600" src="./images/learning_curve.png">
 *with Normalization*
 
 </details>
