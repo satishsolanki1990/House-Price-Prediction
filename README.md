@@ -82,7 +82,7 @@ __1. Checked for  Missing values :__ No missing values in the data
 __2. Data Statistics :__ Features were classified in two categories: Numerical and Catergorical
 
 For Numerical Features:  
-<img align="centre" width="1100" height="300" src="./images/num_stat.png">
+<img align="centre" width="1100" height="450" src="./images/num_stat.png">
 
 For Category Features:  
 <img align="centre" width="1100" height="300" src="./images/cat_stat.png">
@@ -95,10 +95,10 @@ __4. Feature Selection :__ Features were selected based on 3 methods:
 
 __4.1__ Graphical analysis: 
 __scatter plot__(predictor versus response)
-<img align="centre" width="1400" height="1400" src="./images/Scatter_plot.png">
+<img align="centre" width="1800" height="1400" src="./images/Scatter_plot.png">
 
 __histogram__
-<img align="centre" width="1400" height="1400" src="./images/histograms.png">
+<img align="centre" width="1800" height="1400" src="./images/histograms.png">
 
 __4.2__ Abalation Analysis : Features were dropped one by one and ridge regression 
 model accuracy is measured. If drop of a feature causes significant decrease in accuracy,
@@ -109,7 +109,7 @@ then it implies the feature has high importance.
 
 __4.3__ Correlation Matrix : A multicolinearity was tested using correlation matrix.
 
-<img align="center" width="1000" height="1000" src="./images/correlation.png">
+<img align="center" width="1500" height="1000" src="./images/correlation.png">
 
 Based on feature selection analysis dropped these features :  
 
