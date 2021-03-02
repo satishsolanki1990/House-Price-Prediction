@@ -8,7 +8,6 @@
  - [2: Impact of different Learning Rate](#Part-1)
  - [3: Impact of Regularization hyperparameter](#Part-2)
  - [4: Impact of Normalization](#Part-3)
- - [Results](#Results)
  - [Conclusion](#Conclusion)
 ---
 
@@ -76,47 +75,94 @@ The last one is the target for prediction. Variables Description Data Type
 
 <details>
 <summary> <a name="part-0"><b style="font-size:20px">
-1: Data Preprocessing</b> </a> </summary>
+Data Preprocessing</b> </a> </summary>
+Following objectives were accomplished in preprocessing
 
-Preprocessing and simple analysis. Perform the following preprocessing of the your data.
+__1. Checked for  Missing values :__ No missing values in the data
+
+__2. Data Statistics :__ Features were classified in two categories: Numerical and Catergorical
+
+For Numerical Features:  
+![](images/num_stat.png)
+For Category Features:  
+![](images/cat_stat.png)
+
+__3. Remove Outliers :__ For numerical features, examples below 0.01 quantile and higher 0.99 quantiles 
+are dropped. Near 90 outlie examples are dropped.
+
+__4. Feature Selection :__ Features were selected based on 3 methods:
+
+__4.1__ Graphical analysis: 
+__scatter plot__ between predictor versus response
+![](images/scatter_plot.png)
+
+__histogram__ of features.
+![](images/histograms.png)
+
+__4.2__ Abalation Analysis : Features were dropped one by one and ridge regression 
+model accuracy is measured. If drop of a feature causes significant decrease in accuracy,
+then it implies the feature has high importance.
+![](images/onebyone feature drop accuracy.png)
+
+__4.3__ Correlation Matrix : A multicolinearity was tested using correlation matrix.
+![](images/correlation.png)
+
+__Based on feature selection analysis,
+
+Dropped these features :  sqft_living ,  sqft_lot15, yr_dif, year
+
+and saved filtered data.
+
 </details>
 
 
 <details>
 <summary> <a name="part-1"><b style="font-size:20px"> 
-2 : Impact of different Learning Rate</b> </a> </summary>
+Part 1: Impact of different Learning Rate</b> </a> </summary>
 
-Explore different learning rate for batch gradient descent. 
+Explored different learning rates for batch gradient descent. Following learning rates 
+are tested:[1e-0,1e-1,1e-2,1e-3,1e-4,1e-5,1e-6,1e-7]
+![](./images/gamma.png)
+here gamma is learning rate. Based on results,  1e-5 is piked as optimum learning rate.
 </details>
 
 
 <details>
 <summary> <a name="part-2"><b style="font-size:20px"> 
-3 : Impact of Regularization hyper-parameter</b> </a> </summary>
+Part 2: Impact of Regularization hyper-parameter </b> </a> </summary>
+Explored different learning rates for batch gradient descent. Following learning rates 
+are tested:[0,1e-3,1e-2,1e-1,1,10,100]
 
-Experiments with dierent /lmbda values.
+![](./images/gamma.png)
+here lambda is hyper-parameter to handle L2 regularization term and 1.0 is picked.
+
 </details>
 
 
 <details>
 <summary> <a name="part-3"><b style="font-size:20px"> 
-4 : Impact of Normalization</b> </a> </summary>
+Part 3: Impact of Normalization</b> </a> </summary>
+Training with non-normalized data Use the preprocessed data but skip 
+the normalization.
 
- Training with non-normalized data Use the preprocessed data but skip the nor- malization.
+![](./images/learning_curve_raw.png)
+*Without Normalization*
+
+![](./images/learning_curve_raw.png)
+*with Normalization*
+
 </details>
 
-
-<details>
-<summary> <a name="results"><b style="font-size:20px"> 
-Results</b> </a> </summary>
-
- ...
-</details>
 
 <details>
 <summary> <a name="conclusion"><b style="font-size:20px"> 
 Conclusion</b> </a> </summary>
- ...
+1: Learning rate 1e-5 and Lambda 1.0 are found to be optimum.
+
+2: No significant difference is observed in model's RMSE with and without 
+normalization. However, with normalization model learn faster than without 
+normalization.
+
 </details>
 
 
