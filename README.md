@@ -35,7 +35,7 @@ The L2 penalty is tunned by a hyperparameter \lambda .
 The loss function of linear regression with L2-regularization is given below:
 
 
-![](images/Loss_function.png)
+![](./images/Loss_function.png)
 
 Here __w__ are weights of features and \lambda is regularization parameter
 to penalty term.
@@ -83,9 +83,9 @@ __1. Checked for  Missing values :__ No missing values in the data
 __2. Data Statistics :__ Features were classified in two categories: Numerical and Catergorical
 
 For Numerical Features:  
-![](images/num_stat.png)
+![](./images/num_stat.png)
 For Category Features:  
-![](images/cat_stat.png)
+![](./images/cat_stat.png)
 
 __3. Remove Outliers :__ For numerical features, examples below 0.01 quantile and higher 0.99 quantiles 
 are dropped. Near 90 outlie examples are dropped.
@@ -94,21 +94,20 @@ __4. Feature Selection :__ Features were selected based on 3 methods:
 
 __4.1__ Graphical analysis: 
 __scatter plot__(predictor versus response)
-
-![](images/scatter_plot.png)
+![](./images/scatter_plot.png)
 
 __histogram__
-![](images/histograms.png)
+![](./images/histograms.png)
 
 __4.2__ Abalation Analysis : Features were dropped one by one and ridge regression 
 model accuracy is measured. If drop of a feature causes significant decrease in accuracy,
 then it implies the feature has high importance.
 
-![](images/onebyone feature drop accuracy.png)
+![](./images/onebyone feature drop accuracy.png)
 
 __4.3__ Correlation Matrix : A multicolinearity was tested using correlation matrix.
 
-![](images/correlation.png)
+![](./images/correlation.png)
 
 __Based on feature selection analysis,
 
