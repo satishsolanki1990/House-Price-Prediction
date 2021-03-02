@@ -152,7 +152,7 @@ the normalization.
 ![](./images/learning_curve_raw.png)
 *Without Normalization*
 
-![](./images/learning_curve_raw.png)
+![](./images/learning_curve.png)
 *with Normalization*
 
 </details>
