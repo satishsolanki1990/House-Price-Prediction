@@ -150,9 +150,10 @@ Training with non-normalized data Use the preprocessed data but skip
 the normalization.
 
 ![](./images/learning_curve_raw.png)
+*Without Normalization*
 
 ![](./images/learning_curve.png)
-
+*with Normalization*
 
 </details>
 
