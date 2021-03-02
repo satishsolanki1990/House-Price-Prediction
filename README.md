@@ -104,9 +104,10 @@ __4.2__ Abalation Analysis : Features were dropped one by one and ridge regressi
 model accuracy is measured. If drop of a feature causes significant decrease in accuracy,
 then it implies the feature has high importance.
 
-![](images/onebyone feature drop accuracy.png =100x30)
+![](images/onebyone feature drop accuracy.png)
 
 __4.3__ Correlation Matrix : A multicolinearity was tested using correlation matrix.
+
 ![](images/correlation.png)
 
 __Based on feature selection analysis,
