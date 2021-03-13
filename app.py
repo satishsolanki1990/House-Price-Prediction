@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import pickle as pkl
 
 app = Flask(__name__)
@@ -17,12 +17,13 @@ def predicts():
     '''
 
     # input
-    input_features=[]
+    in_features=[int(x) for x in request.form.values()]
+    input_features = np.array(in_features)
 
     # predicts
     output = mode.predict(input_features)
 
-    return render_template('index.html',prediction_text='')
+    return render_template('index.html',prediction_text='House Price should be $ {}'.format(output))
 
 
 if __name__ == "__main__":

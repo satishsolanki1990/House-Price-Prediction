@@ -5,6 +5,56 @@
     <title>Title</title>
 </head>
 <body>
+<div class="login">
+	<h1>Predict House Price</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="bedrooms" placeholder="Number of Bedrooms" required="required" /><br>
+        <input type="text" name="bathrooms" placeholder="Number of Bedrooms" required="required" /><br>
+		<input type="text" name="sqft_lot" placeholder="sqft of lot area" required="required" /><br>
+        <input type="text" name="floors" placeholder="Number of Floors" required="required" /><br>
+
+        <label for="waterfront">Does House hase waterfront?:</label>
+        <select name="waterfront" id="waterfront">
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+        </select>
+        <input type="text" name="waterfront" placeholder="Does houes have waterfront" required="required" /><br>
+		<input type="text" name="view" placeholder="number of views" required="required" /><br>
+
+        <input type="text" name="condition" placeholder="overall House condition (1(worn out) - 5(excellent))?" required="required" /><br>
+        <input type="text" name="grade" placeholder="House grade (1(poor) - 13(excellent))?" required="required" /><br>
+
+
+
+        <input type="text" name="sqft_above" placeholder="Number of Bedrooms" required="required" /><br>
+        <input type="text" name="sqft_basement" placeholder="Number of Bedrooms" required="required" /><br>
+		<input type="text" name="yr_built" placeholder="sqft of lot area" required="required" /><br>
+        <input type="text" name="yr_renovated" placeholder="Number of Floors" required="required" /><br>
+        <input type="text" name="zipcode" placeholder="Number of Bedrooms" required="required" /><br>
+        <input type="text" name="lat" placeholder="Number of Bedrooms" required="required" /><br>
+		<input type="text" name="long" placeholder="sqft of lot area" required="required" /><br>
+        <input type="text" name="sqft_living15" placeholder="Number of Floors" required="required" /><br>
+        <input type="text" name="month" placeholder="Number of Bedrooms" required="required" /><br>
+		<input type="text" name="day" placeholder="sqft of lot area" required="required" /><br>
+        <input type="text" name="year" placeholder="Number of Floors" required="required" /><br>
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+    </form>
+<!--'sqft_above', 'sqft_basement', 'yr_built',
+       'yr_renovated', 'zipcode', 'lat', 'long', 'sqft_living15', 'price',
+       'month', 'day', 'year'-->
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+
 
 </body>
 </html>
