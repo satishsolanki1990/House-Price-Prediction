@@ -2,48 +2,271 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
 </head>
 <body>
 <div class="login">
-	<h1>Predict House Price</h1>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <h1><a class="navbar-brand" href="/">HOUSE PRICE PREDICTION</a></h1>
+            </div>
+        </div>
+    </nav>
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="bedrooms" placeholder="Number of Bedrooms" required="required" /><br>
-        <input type="text" name="bathrooms" placeholder="Number of Bedrooms" required="required" /><br>
-		<input type="text" name="sqft_lot" placeholder="sqft of lot area" required="required" /><br>
-        <input type="text" name="floors" placeholder="Number of Floors" required="required" /><br>
+    <br><br><br>
 
-        <label for="waterfront">Does House hase waterfront?:</label>
-        <select name="waterfront" id="waterfront">
-            <option value=1>Yes</option>
-            <option value=0>No</option>
-        </select>
-        <input type="text" name="waterfront" placeholder="Does houes have waterfront" required="required" /><br>
-		<input type="text" name="view" placeholder="number of views" required="required" /><br>
+    <div class="container">
 
-        <input type="text" name="condition" placeholder="overall House condition (1(worn out) - 5(excellent))?" required="required" /><br>
-        <input type="text" name="grade" placeholder="House grade (1(poor) - 13(excellent))?" required="required" /><br>
+         <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}"method="post">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Number of Bedrooms</h5>
+                            <input type="text" name="bedrooms" required="required" />
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Number of Bedrooms</h5>
+                            <input type="text" name="bathrooms" placeholder="" required="required" />
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">sqft of lot area</h5>
+                            <input type="text" name="sqft_lot" placeholder="" required="required" />
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Number of Views</h5>
+                            <input type="text" name="view" required="required" />
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+            <br>
+            <br>
+            <br>
+<!--            2nd column-->
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">waterfront <br>(Yes/No)</h5>
+                            <input type="text" name="waterfront" required="required" />
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">House grade<br> 1(poor) - 13(excellent)</h5>
+                             <input type="text" name="grade" placeholder="House grade ?" required="required" /><br>
 
 
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">overall House condition<br> 1(Poor)-5(Excellent)</h5>
+                            <input type="text" name="condition" required="required" />
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Living room area<br> in 2015</h5>
+                             <input type="text" name="sqft_living15" required="required" /><br>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+            <br>
+            <br>
+            <br>
+<!--            3rd column-->
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Area except basement</h5>
+                            <input type="text" name="sqft_above" required="required" /><br>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">basement area(sqft)</h5>
+                            <input type="text" name="sqft_basement" required="required" /><br>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">House built Year </h5>
+                            <input type="text" name="yr_built" required="required" /><br>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Renovation Year(0 if not)</h5>
+                            <input type="text" name="yr_renovated" required="required" /><br>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+            <br>
+            <br>
+            <br>
+<!--            4th column-->
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Zipcode</h5>
+                            <input type="text" name="zipcode"  required="required" /><br>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Latitude</h5>
+                            <input type="text" name="lat"required="required" /><br>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Longitude </h5>
+                            <input type="text" name="long" required="required" /><br>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Number of Floor</h5>
+                            <input type="text" name="floors" required="required" /><br>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+            </div>
+            <br>
+            <br>
+            <br>
+<!--            last row-->
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5><label for="waterfront">Does House hase waterfront?</label></h5>
+                            <select name="waterfront" id="waterfront">
+                                <option value=1>Yes</option>
+                                <option value=0>No</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-        <input type="text" name="sqft_above" placeholder="Number of Bedrooms" required="required" /><br>
-        <input type="text" name="sqft_basement" placeholder="Number of Bedrooms" required="required" /><br>
-		<input type="text" name="yr_built" placeholder="sqft of lot area" required="required" /><br>
-        <input type="text" name="yr_renovated" placeholder="Number of Floors" required="required" /><br>
-        <input type="text" name="zipcode" placeholder="Number of Bedrooms" required="required" /><br>
-        <input type="text" name="lat" placeholder="Number of Bedrooms" required="required" /><br>
-		<input type="text" name="long" placeholder="sqft of lot area" required="required" /><br>
-        <input type="text" name="sqft_living15" placeholder="Number of Floors" required="required" /><br>
-        <input type="text" name="month" placeholder="Number of Bedrooms" required="required" /><br>
-		<input type="text" name="day" placeholder="sqft of lot area" required="required" /><br>
-        <input type="text" name="year" placeholder="Number of Floors" required="required" /><br>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-5">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Selling Date</h5>
+                            <input type="date" name="Date" required="required">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
 
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-
-    </form>
+        </form>
+    </div>
 <!--'sqft_above', 'sqft_basement', 'yr_built',
        'yr_renovated', 'zipcode', 'lat', 'long', 'sqft_living15', 'price',
        'month', 'day', 'year'-->
@@ -52,9 +275,6 @@
    {{ prediction_text }}
 
  </div>
-
-
-
 
 </body>
 </html>
