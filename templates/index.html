@@ -44,7 +44,7 @@
                 <div class="col-sm-3">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Number of Bedrooms</h5>
+                            <h5 class="card-title">Number of bathrooms</h5>
                             <input type="text" name="bathrooms" placeholder="" required="required" />
                         </div>
                     </div>
@@ -83,8 +83,11 @@
                 <div class="col-sm-3">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">waterfront <br>(Yes/No)</h5>
-                            <input type="text" name="waterfront" required="required" />
+                            <h5><label for="waterfront">Does House hase waterfront?</label></h5>
+                            <select name="waterfront" id="waterfront">
+                                <option value=1>Yes</option>
+                                <option value=0>No</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -95,7 +98,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">House grade<br> 1(poor) - 13(excellent)</h5>
-                             <input type="text" name="grade" placeholder="House grade ?" required="required" /><br>
+                             <input type="text" name="grade" required="required" /><br>
 
 
                         </div>
@@ -232,21 +235,6 @@
             <br>
 <!--            last row-->
             <div class="row">
-                <div class="col-sm-5">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5><label for="waterfront">Does House hase waterfront?</label></h5>
-                            <select name="waterfront" id="waterfront">
-                                <option value=1>Yes</option>
-                                <option value=0>No</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-                <br>
-                <br>
                 <div class="col-sm-5">
                     <div class="card">
                         <div class="card-body">
