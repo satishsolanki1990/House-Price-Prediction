@@ -163,7 +163,7 @@ the normalization.
 </details>
 
 
-<details>
+<details open>
 <summary> <a name="conclusion"><b style="font-size:20px"> 
 Conclusion</b> </a> </summary>
 1: Learning rate 1e-5 and Lambda 1.0 are found to be optimum.
