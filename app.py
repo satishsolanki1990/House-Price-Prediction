@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
 
-# model =pkl.load(open('model.pkl','rb'))
+model =pkl.load(open('model.pkl','rb'))
 
 @app.route('/')
 def home():
@@ -52,26 +52,33 @@ def predicts():
 
         print(day,floors)
 
+        dummy=1
+        X=[dummy,
+         bedrooms,
+         bathrooms,
+         sqft_lot,
+         floors,
+         waterfront,
+         view,
+         condition,
+         grade,
+         sqft_above,
+         sqft_basement,
+         yr_built,
+         yr_renovated,
+         zipcode,
+         lat,
+         long,
+         sqft_living15,
+         month,
+         day,
+         year]
 
+        X=np.array(X)
+        prediction = X.dot(np.array(model['weights']))
+        output = round(prediction, 2)
+        return render_template('index.html', prediction_text='House Price should be $ {}'.format(X,output))
 
-    #     prediction = model.predict([[Present_Price, Kms_Driven2, Owner, Year, Fuel_Type_Diesel, Fuel_Type_Petrol,
-    #                                  Seller_Type_Individual, Transmission_Mannual]])
-    #     output = round(prediction[0], 2)
-    #     if output < 0:
-        output = 100
-
-        return render_template('index.html', prediction_text='House Price should be $ {}'.format(output))
-
-    #     else:
-    #         return render_template('index.html', prediction_text="You Can Sell The Car at {}".format(output))
-    # else:
-    #     return render_template('index.html')
-
-    # input_features = np.array(in_features)
-
-
-    # predicts
-    # output = mode.predict(input_features)
     return render_template('index.html')
 
 
