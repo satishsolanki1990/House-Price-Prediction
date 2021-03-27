@@ -77,7 +77,7 @@ def predicts():
         X=np.array(X)
         prediction = X.dot(np.array(model['weights']))
         output = round(prediction, 2)
-        return render_template('index.html', prediction_text='House Price should be $ {}'.format(X,output))
+        return render_template('index.html', prediction_text='House Price should be $ {}'.format(output))
 
     return render_template('index.html')
 
