@@ -21,3 +21,4 @@ sklearn==0.0
 threadpoolctl==2.1.0
 tqdm==4.59.0
 Werkzeug==1.0.1
+gunicorn
