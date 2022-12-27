@@ -3,7 +3,7 @@ jsonify==0.5
 pipdeptree==2.0.0
 requests==2.25.1
 seaborn==0.11.1
-setuptools==49.2.1
+setuptools==65.5.1
 sklearn==0.0
 tqdm==4.59.0
 gunicorn
